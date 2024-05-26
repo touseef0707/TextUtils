@@ -1,7 +1,0 @@
-add bootstrap css and js to index.html
-
-then create components as required
-
-add props as required
-
-import required components in app.js and set props as required.
