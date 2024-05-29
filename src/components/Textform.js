@@ -52,7 +52,6 @@ export default function Textform(props) {
     const [wordsLength, setWordsLength] = useState(0);
     const [emails, setEmails] = useState([]);
 
-
     let style = {
         backgroundColor: '#ffffff',
         color: '#000000'
@@ -88,12 +87,10 @@ export default function Textform(props) {
             color: '#000000'
         }
     }
-
-    
     
     return (
         <div>
-            <div className='container'>
+            <div className='container my-5'>
                 <h1>{props.heading}</h1>
                 <div className="mb-2">
                     <textarea className="form-control" value={text} onChange={handleOnChange} 
@@ -114,7 +111,7 @@ export default function Textform(props) {
                 <p>Words: {wordsLength}</p>
                 <p>Reading Time: {0.008 * wordsLength} minutes</p>
                 <h3>Preview</h3>
-                <p>{text.length>0?text:'Enter your text to preview it here'}</p>
+                <p>{text.length>0?text:'nothing to preview'}</p>
                 {emails.length > 0 && (
                         <>
                             <h3>Extracted Emails</h3>

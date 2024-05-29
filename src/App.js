@@ -1,19 +1,16 @@
-// import logo from './logo.svg';
 import './App.css';
 import Alert from './components/Alert';
 import Navbar from './components/Navbar';
 import Textform from './components/Textform';
 import React, {useState} from 'react';
-// import About from './components/About';
+import About from './components/About';
 
-// import {
-//   BrowserRouter as Router,
-//   Routes,
-//   Route
-// } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route
+} from "react-router-dom";
 
-
-// let name = "Rainyjoke"
 
 function App() {
 
@@ -62,24 +59,17 @@ function App() {
   }
 
   return (
-  //   <Router>
-  //     <Navbar title='RainyJoke' mode={mode} handleToggleMode={handleToggleMode}/>
-  //     <Alert alert={alert} />
-  //     <div className="container my-3">
-  //     <Routes>
-  //         <Route path="/" element={<Textform heading="Enter the text to analyze below" mode={mode} showAlert={showAlert}/>} />
-  //         <Route path="/about" element={<About/>} />
-  //       </Routes>
-  //     </div>
-  //   </Router>
-  // );
-  <div>
+    <Router>
       <Navbar title='TextUtils' mode={mode} handleToggleMode={handleToggleMode}/>
       <Alert alert={alert} />
       <div className="container my-3">
-        <Textform heading="Enter the text to analyze below" mode={mode} showAlert={showAlert}/>
+        <Routes>
+          <Route exact path="/TextUtils" element={<Textform heading="Word & Character Counter, Remove Extra Spaces, Convert to Uppercase, Lowercase" mode={mode} showAlert={showAlert}/>} />
+          <Route exact path="/home" element={<Textform heading="Word & Character Counter, Remove Extra Spaces, Convert to Uppercase, Lowercase" mode={mode} showAlert={showAlert}/>} />
+          <Route exact path="/about" element={<About mode={mode}/>} />
+        </Routes>
       </div>
-    </div>
+    </Router>
   );
 }
 
